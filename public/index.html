@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Planner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Weekly Planner</h1>
+  <div id="task-form">
+    <h2>Add Task</h2>
+    <input type="text" id="title" placeholder="Task title" />
+    <label>Duration (hrs): <input type="number" id="duration" min="1" max="24" value="1" /></label>
+    <label><input type="checkbox" id="flexible" /> Flexible</label>
+    <label>Start: <input type="datetime-local" id="start" /></label>
+    <button id="add-task">Add</button>
+  </div>
+
+  <div id="unscheduled">
+    <h2>Unscheduled Tasks</h2>
+    <ul id="flexible-list"></ul>
+  </div>
+
+  <div id="calendar" class="calendar-grid"></div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Edit Task</h2>
+      <input type="text" id="edit-title" placeholder="Title" />
+      <label>Duration (hrs):
+        <input type="number" id="edit-duration" min="1" max="24" value="1" />
+      </label>
+      <label>Start:
+        <input type="datetime-local" id="edit-start" />
+      </label>
+      <label><input type="checkbox" id="edit-flexible" /> Flexible</label>
+      <div class="modal-actions">
+        <button id="delete-task" class="danger">Delete</button>
+        <button id="save-task">Save</button>
+        <button id="cancel-edit">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
