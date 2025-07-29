@@ -17,28 +17,46 @@ h1 {
   background: #ddd;
 }
 
-#calendar {
+#calendar.calendar-grid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-auto-rows: 60px;
-  gap: 1px;
-  background: #444;
-  color: #333;
+  grid-template-columns: 80px repeat(7, 1fr);
+  grid-template-rows: 30px repeat(24, 60px);
+  position: relative;
 }
 
-.time-slot {
-  background: white;
-  position: relative;
+.day-header,
+.time-label,
+.cell {
   border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.day-header {
+  background: #eee;
+  text-align: center;
+  line-height: 30px;
+}
+
+.time-label {
+  background: #fafafa;
+  text-align: right;
+  padding-right: 4px;
+  line-height: 60px;
+}
+
+.cell {
+  background: white;
 }
 
 .task {
   background: #90caf9;
   border: 1px solid #64b5f6;
-  position: absolute;
+  position: relative;
   padding: 2px;
   font-size: 12px;
-  box-sizing: border-box;
+  cursor: move;
+  overflow: hidden;
+  z-index: 10;
 }
 
 #unscheduled {
